@@ -1,0 +1,16 @@
+all: safeadd.exe safesubtract.exe safemultiply.exe safedivide.exe
+
+safeadd.exe: safeadd.c safeint.c util.c
+	gcc -Wall -Wextra -std=c99 -o safeadd.exe safeadd.c safeint.c util.c
+
+safesubtract.exe: safesubtract.c safeint.c util.c
+	gcc -Wall -Wextra -std=c99 -o safesubtract.exe safesubtract.c safeint.c util.c
+
+safemultiply.exe: safemultiply.c safeint.c util.c
+	gcc -Wall -Wextra -std=c99 -o safemultiply.exe safemultiply.c safeint.c util.c
+
+safedivide.exe: safedivide.c safeint.c util.c
+	gcc -Wall -Wextra -std=c99 -o safedivide.exe safedivide.c safeint.c util.c
+
+clean:
+	del *.exe

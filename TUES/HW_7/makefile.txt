@@ -1,0 +1,10 @@
+all: taskmanager.exe
+
+processes.o: processes.h processes.c 
+    gcc -c processes.h processes.c -o processes.o
+
+taskmanager.exe: taskmanager.c processes.o
+    gcc taskmanager.c processes.o -o taskmanager.exe
+
+clean:
+    del -f *.o *.exe
